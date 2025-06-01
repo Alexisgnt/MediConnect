@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: #e6f0ff;
+  --primary-100: #bfd7ff;
+  --primary-200: #99beff;
+  --primary-300: #73a5ff;
+  --primary-400: #4d8cff;
+  --primary-500: #0D6EFD;
+  --primary-600: #0056cc;
+  --primary-700: #003f99;
+  --primary-800: #002966;
+  --primary-900: #001433;
+
+  --secondary-50: #e0fbf4;
+  --secondary-100: #b3f4e3;
+  --secondary-200: #85edd2;
+  --secondary-300: #57e6c1;
+  --secondary-400: #2ad9af;
+  --secondary-500: #20C997;
+  --secondary-600: #1aa179;
+  --secondary-700: #13795b;
+  --secondary-800: #0d503c;
+  --secondary-900: #06281e;
+
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+
+  --error: #dc2626;
+  --warning: #f59e0b;
+  --success: #10b981;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900 font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium text-neutral-800;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl;
+  }
+
+  a {
+    @apply text-primary-600 hover:text-primary-700 transition-colors;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+
+  .btn-outline {
+    @apply btn border border-neutral-300 text-neutral-700 hover:bg-neutral-100 focus:ring-primary-500;
+  }
+
+  .input-field {
+    @apply block w-full px-4 py-2 rounded-md border border-neutral-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm p-6 border border-neutral-200;
+  }
+
+  .animate-fade-in {
+    @apply transition-opacity duration-300 ease-in-out;
+  }
+}
+
+/* React Calendar customization */
+.react-calendar {
+  @apply w-full border-0 bg-transparent;
+}
+
+.react-calendar__navigation {
+  @apply mb-4;
+}
+
+.react-calendar__navigation button {
+  @apply text-neutral-800 hover:bg-neutral-100 rounded-md min-w-12;
+}
+
+.react-calendar__month-view__weekdays {
+  @apply text-neutral-600 font-medium;
+}
+
+.react-calendar__month-view__days__day {
+  @apply aspect-square rounded-md;
+}
+
+.react-calendar__tile {
+  @apply rounded-md text-sm font-medium;
+}
+
+.react-calendar__tile:enabled:hover {
+  @apply bg-neutral-100;
+}
+
+.react-calendar__tile--now {
+  @apply bg-primary-50 text-primary-700;
+}
+
+.react-calendar__tile--active {
+  @apply bg-primary-500 text-white;
+}
+
+.react-calendar__tile--active:enabled:hover {
+  @apply bg-primary-600;
+}
